@@ -14,14 +14,9 @@ def csv_to_xlsx_converter(input_file, output_file, delimiter):
         workbook.close()
 
 
-def main():
-    parser = argparse.ArgumentParser(description='CSV to XLSX Converter')
-    parser.add_argument('input_file', type=str, help='Input CSV file')
-    parser.add_argument('output_file', type=str, help='Output XLSX file')
-    parser.add_argument('-d', '--delimiter', type=str, default=';', help='CSV delimiter (";" by default)')
-    args = parser.parse_args()
-    csv_to_xlsx_converter(args.input_file, args.output_file, args.delimiter)
-
-
-if __name__ == "__main__":
-    main()
+parser = argparse.ArgumentParser(description='CSV to XLSX Converter')
+parser.add_argument('input_file', type=str, help='Input CSV file')
+parser.add_argument('output_file', type=str, help='Output XLSX file')
+parser.add_argument('-d', '--delimiter', type=str, default=';', help='CSV delimiter (";" by default)')
+args = parser.parse_args()
+csv_to_xlsx_converter(args.input_file, args.output_file, args.delimiter)
